@@ -1,99 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bhanu Tak | Portfolio</title>
-  <link rel="stylesheet" href="styles.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     /* ===== Global Styles ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.6; }
-    a { color: #0077b5; text-decoration: none; }
+    body { font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.6; background: #fdfdfd; }
+    a { color: #800000; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    .container { width: 90%; max-width: 1200px; margin: auto; }
 
-    /* ===== Header & Navigation ===== */
-    header { background: #f8f9fa; padding: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;}
-    .container { width: 90%; max-width: 1100px; margin: auto; }
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-weight: 700; font-size: 1.4rem; }
-    .menu { list-style: none; display: flex; gap: 1rem; }
-    .menu li a { font-weight: 600; }
+    /* ===== Color Palette =====
+       Maroon: #800000
+       Gold: #d4af37
+       Light: #f8f8f8
+       Accent: #c27b7f
+    */
 
-    /* ===== Hero Section ===== */
-   /* ===== Hero Section ===== */
+    /* ===== Header ===== */
+    header { background: #800000; padding: 20px 0; position: sticky; top: 0; z-index: 100; }
+    nav { display: flex; justify-content: space-between; align-items: center; color: #fff; }
+    .logo { font-weight: 700; font-size: 1.5rem; color: #d4af37; }
+    .menu { list-style: none; display: flex; gap: 1.2rem; }
+    .menu li a { color: #fff; font-weight: 600; }
+    .menu li a:hover { color: #d4af37; }
+
+   
+
+
+/* ===== Hero Section ===== */
 .hero {
   text-align: center;
-  padding: 80px 0;
-  background: linear-gradient(135deg, #0077b5 0%, #00a8ff 100%);
+  padding: 100px 0;
+  background: linear-gradient(135deg, #5a0000, #800000); /* darker maroon shades */
   color: #fff;
 }
-
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 10px;
-}
-
-.hero p {
-  font-size: 1.1rem;
-  opacity: 0.9;
-  margin-bottom: 20px;
-}
-
+.hero h1 { font-size: 3rem; margin-bottom: 10px; }
+.hero p { font-size: 1.2rem; opacity: 0.95; margin-bottom: 20px; }
 .hero .btn {
-  display: inline-block;
-  padding: 12px 30px;
-  background: #fff;
-  color: #0077b5;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: background 0.3s, color 0.3s;
+  display: inline-block; padding: 14px 32px;
+  background: #d4af37; color: #5a0000;
+  border-radius: 30px; font-weight: 700;
+  transition: 0.3s;
+}
+.hero .btn:hover { background: #fff; color: #800000; }
+
+/* ===== Contact ===== */
+#contact .social {
+  display: flex; justify-content: center; gap: 1.5rem; margin-top: 25px;
+}
+#contact .social a {
+  width: 55px; height: 55px;             /* Equal width & height */
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.8rem; color: #800000;
+  background: #f1f1f1;
+  border-radius: 50%;                   /* Perfect circle */
+  transition: 0.3s;
+}
+#contact .social a:hover {
+  background: #d4af37; color: #fff;
 }
 
-.hero .btn:hover {
-  background: #e1e1e1;
-  color: #005f8d;
-}
 
     /* ===== Sections ===== */
-    section { padding: 60px 0; }
-    section h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; position: relative; }
-    section h2::after { content: ''; width: 60px; height: 4px; background: #0077b5; display: block; margin: 10px auto 0; border-radius: 2px; }
+    section { padding: 70px 0; }
+    section h2 { text-align: center; font-size: 2.2rem; margin-bottom: 40px; position: relative; color: #800000; }
+    section h2::after {
+      content: ''; width: 70px; height: 4px; background: #d4af37;
+      display: block; margin: 12px auto 0; border-radius: 2px;
+    }
     .grid { display: grid; gap: 2rem; }
     .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
     /* ===== About ===== */
-    #about p { max-width: 800px; margin: auto; }
+    #about p { max-width: 850px; margin: auto; text-align: center; font-size: 1.05rem; }
 
     /* ===== Skills ===== */
-    .skills-list { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; }
-    .skills-list li { background: #e9ecef; padding: .6rem 1rem; border-radius: 20px; font-size: .9rem; }
+    .skills-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; }
+    .skills-list li {
+      background: #f1f1f1; padding: .7rem 1.2rem; border-radius: 25px;
+      font-size: .95rem; display: flex; align-items: center; gap: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    }
+    .skills-list li i { color: #800000; }
 
     /* ===== Experience ===== */
     .timeline { list-style: none; position: relative; }
-    .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 4px; background: #0077b5; }
-    .timeline li { margin-bottom: 30px; padding-left: 60px; position: relative; }
-    .timeline li::before { content: ''; position: absolute; left: 12px; top: 5px; width: 16px; height: 16px; background: #0077b5; border-radius: 50%; }
-    .timeline li h3 { font-size: 1.1rem; margin-bottom: 5px; }
-    .timeline li span { font-size: .9rem; color: #555; }
+    .timeline::before {
+      content: ''; position: absolute; left: 20px; top: 0; bottom: 0;
+      width: 4px; background: #d4af37;
+    }
+    .timeline li {
+      margin-bottom: 35px; padding-left: 60px; position: relative;
+    }
+    .timeline li::before {
+      content: ''; position: absolute; left: 12px; top: 5px;
+      width: 16px; height: 16px; background: #800000; border-radius: 50%;
+    }
+    .timeline li h3 { font-size: 1.1rem; margin-bottom: 6px; color: #800000; }
+    .timeline li span { font-size: .9rem; color: #666; }
 
     /* ===== Projects ===== */
-    .project { background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
-    .project h3 { margin-bottom: 10px; }
+    .project {
+      background: #fff; padding: 25px; border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+    .project:hover { transform: translateY(-5px); }
+    .project h3 { margin-bottom: 10px; color: #800000; }
 
     /* ===== Contact ===== */
-    #contact .social { display: flex; justify-content: center; gap: 1rem; margin-top: 20px; }
-    #contact .social a { font-size: 1.5rem; color: #0077b5; }
+    #contact p { text-align: center; }
+    #contact .social { display: flex; justify-content: center; gap: 1.5rem; margin-top: 25px; }
+    #contact .social a {
+      font-size: 1.8rem; color: #800000;
+      background: #f1f1f1; padding: 12px; border-radius: 50%;
+      transition: 0.3s;
+    }
+    #contact .social a:hover { background: #d4af37; color: #fff; }
 
     /* ===== Footer ===== */
-    footer { text-align: center; padding: 20px 0; background: #f1f1f1; font-size: .9rem; }
+    footer {
+      text-align: center; padding: 20px 0;
+      background: #800000; color: #fff; font-size: .9rem;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header & Navigation -->
+  <!-- Header -->
   <header>
     <div class="container">
       <nav>
@@ -114,99 +154,100 @@
     <div class="container">
       <h1>Hi, I'm Bhanu Tak</h1>
       <p>Final Year B.Sc. LL.B. (Hons.) | Data Science & Legal Tech Innovator</p>
-      <a href="#projects" class="btn">Explore My Work</a>
+      <a href="#projects" class="btn"><i class="fas fa-briefcase"></i> Explore My Work</a>
     </div>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about">
     <div class="container">
-      <h2>About Me</h2>
-      <p>As a driven law and data science student at National Forensic Sciences University, I specialize in building AI-powered solutions to transform legal systems. With hands-on experience in machine learning, NLP, and legal analytics, I aim to improve efficiency, accessibility, and decision-making in the legal domain.</p>
+      <h2><i class="fas fa-user"></i> About Me</h2>
+      <p>As a driven law and data science student at National Forensic Sciences University, I specialize in building AI-powered solutions to transform legal systems. With hands-on experience in machine learning, NLP, and legal analytics, I aim to improve efficiency, accessibility, and decision-making in the legal domain. I combine corporate law expertise with technical innovation to create the future of legal-tech.</p>
     </div>
   </section>
 
-  <!-- Skills Section -->
+  <!-- Skills -->
   <section id="skills">
     <div class="container">
-      <h2>Skills & Tools</h2>
+      <h2><i class="fas fa-code"></i> Skills & Tools</h2>
       <ul class="skills-list">
-        <li>Python</li><li>R</li><li>C/C++</li><li>JavaScript</li><li>SQL</li>
-        <li>TensorFlow</li><li>Scikit-Learn</li><li>LangChain</li><li>Power BI</li><li>Tableau</li>
-        <li>Git & GitHub</li><li>Docker</li><li>HTML/CSS</li><li>React</li><li>Node.js</li>
+        <li><i class="fab fa-python"></i> Python</li>
+        <li><i class="fas fa-database"></i> SQL</li>
+        <li><i class="fas fa-robot"></i> TensorFlow</li>
+        <li><i class="fas fa-brain"></i> Scikit-Learn</li>
+        <li><i class="fas fa-chart-line"></i> Power BI</li>
+        <li><i class="fas fa-chart-pie"></i> Tableau</li>
+        <li><i class="fab fa-github"></i> Git & GitHub</li>
+        <li><i class="fab fa-docker"></i> Docker</li>
+        <li><i class="fab fa-js"></i> JavaScript</li>
+        <li><i class="fab fa-react"></i> React</li>
       </ul>
     </div>
   </section>
 
-  <!-- Experience Section -->
+  <!-- Experience -->
   <section id="experience">
     <div class="container">
-      <h2>Professional Experience</h2>
+      <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
       <ul class="timeline">
         <li>
           <h3>Legal Intern – Khaitan & Co, Mumbai</h3>
           <span>Aug 2025 – Present</span>
-          <p>Supporting the Digital & Innovation team to develop tech-driven legal solutions.</p>
+          <p>Supporting the Digital & Innovation team in tech-driven solutions.</p>
         </li>
         <li>
           <h3>Legal Tech Analyst – Ritam Ventures</h3>
           <span>Jul 2025 – Present</span>
-          <p>Researching startups and innovations in the Indian legal-tech ecosystem.</p>
+          <p>Researching startups & innovations in the Indian legal-tech ecosystem.</p>
         </li>
         <li>
           <h3>AI Developer – Kuki Solutions</h3>
           <span>Dec 2024 – May 2025</span>
-          <p>Built an AI-driven ESG compliance tool and automated Materiality Reports.</p>
+          <p>Built AI-driven ESG compliance tool & automated Materiality Reports.</p>
         </li>
         <li>
           <h3>Machine Learning Intern – Dream Legal</h3>
           <span>May 2024 – Jul 2024</span>
-          <p>Automated legal tasks and maintained ML-powered legal solutions.</p>
+          <p>Automated legal tasks & maintained ML-powered legal solutions.</p>
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- Projects Section -->
+  <!-- Projects -->
   <section id="projects">
     <div class="container">
-      <h2>Highlighted Projects</h2>
+      <h2><i class="fas fa-lightbulb"></i> Highlighted Projects</h2>
       <div class="grid grid-2">
         <div class="project">
           <h3>AI-Driven ESG Compliance Tool</h3>
-          <p>Developed backend systems and prompt engineering modules for automated compliance.</p>
+          <p>Developed backend systems & prompt engineering for compliance automation.</p>
         </div>
         <div class="project">
           <h3>Legal Process Automation Suite</h3>
-          <p>Created ML-based pipelines for document processing and predictive case analysis.</p>
+          <p>Created ML pipelines for document processing & predictive case analysis.</p>
         </div>
         <div class="project">
           <h3>Air Pollution Data Analysis</h3>
-          <p>Researched multi-time series patterns during a Data Science internship in Japan.</p>
+          <p>Researched multi-time series patterns during Data Science internship in Japan.</p>
         </div>
         <div class="project">
           <h3>Forensic Justice Publications</h3>
-          <p>Editor of a book inaugurated by the Home Minister & research presented internationally.</p>
+          <p>Editor of book inaugurated by the Home Minister & presented research internationally.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact -->
   <section id="contact">
     <div class="container">
-      <h2>Get In Touch</h2>
-      <p style="text-align:center;">Feel free to connect with me on LinkedIn or send me an email.</p>
+      <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
+      <p>Feel free to connect with me on LinkedIn, GitHub or email.</p>
       <div class="social">
-        <a href="https://linkedin.com/in/bhanutak1310" target="_blank" aria-label="LinkedIn">
-          <img src="assets/linkedin.svg" width="32" alt="LinkedIn"/>
-        </a>
-        <a href="mailto:bhanutak1310@gmail.com" aria-label="Email">
-          <img src="assets/mail.svg" width="32" alt="Email"/>
-        </a>
-        <a href="https://github.com/1310-on-web" target="_blank" aria-label="GitHub">
-          <img src="assets/github.svg" width="32" alt="GitHub"/>
-        </a>
+        <a href="https://linkedin.com/in/bhanutak1310" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:bhanutak1310@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/1310-on-web" target="_blank"><i class="fab fa-github"></i></a>
       </div>
     </div>
   </section>
