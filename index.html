@@ -1,110 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhanu Tak | Portfolio</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f8f9fa;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .badge {
-            display: inline-block;
-            margin: 5px;
-            padding: 8px 16px;
-            background: #0077b5;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .badge:hover {
-            opacity: 0.8;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bhanu Tak | Portfolio</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* ===== Global Styles ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Open Sans', sans-serif; color: #333; line-height: 1.6; }
+    a { color: #0077b5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ===== Header & Navigation ===== */
+    header { background: #f8f9fa; padding: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100;}
+    .container { width: 90%; max-width: 1100px; margin: auto; }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 700; font-size: 1.4rem; }
+    .menu { list-style: none; display: flex; gap: 1rem; }
+    .menu li a { font-weight: 600; }
+
+    /* ===== Hero Section ===== */
+    .hero { text-align: center; padding: 80px 0; background: url('assets/banner.png') center/cover no-repeat; color: #fff; }
+    .hero h1 { font-size: 2.8rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 20px; }
+    .hero .btn { display: inline-block; padding: 12px 30px; background: #0077b5; color: #fff; border-radius: 4px; font-weight: 600; }
+
+    /* ===== Sections ===== */
+    section { padding: 60px 0; }
+    section h2 { text-align: center; font-size: 2rem; margin-bottom: 40px; position: relative; }
+    section h2::after { content: ''; width: 60px; height: 4px; background: #0077b5; display: block; margin: 10px auto 0; border-radius: 2px; }
+    .grid { display: grid; gap: 2rem; }
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+
+    /* ===== About ===== */
+    #about p { max-width: 800px; margin: auto; }
+
+    /* ===== Skills ===== */
+    .skills-list { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; }
+    .skills-list li { background: #e9ecef; padding: .6rem 1rem; border-radius: 20px; font-size: .9rem; }
+
+    /* ===== Experience ===== */
+    .timeline { list-style: none; position: relative; }
+    .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 4px; background: #0077b5; }
+    .timeline li { margin-bottom: 30px; padding-left: 60px; position: relative; }
+    .timeline li::before { content: ''; position: absolute; left: 12px; top: 5px; width: 16px; height: 16px; background: #0077b5; border-radius: 50%; }
+    .timeline li h3 { font-size: 1.1rem; margin-bottom: 5px; }
+    .timeline li span { font-size: .9rem; color: #555; }
+
+    /* ===== Projects ===== */
+    .project { background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+    .project h3 { margin-bottom: 10px; }
+
+    /* ===== Contact ===== */
+    #contact .social { display: flex; justify-content: center; gap: 1rem; margin-top: 20px; }
+    #contact .social a { font-size: 1.5rem; color: #0077b5; }
+
+    /* ===== Footer ===== */
+    footer { text-align: center; padding: 20px 0; background: #f1f1f1; font-size: .9rem; }
+  </style>
 </head>
 <body>
+
+  <!-- Header & Navigation -->
+  <header>
     <div class="container">
-        <div class="header">
-            <h1>Hi, I'm Bhanu Tak 👋</h1>
-            <p><strong>Final Year B.Sc. LL.B. (Hons.) | Data Science Specialist | Aspiring Tech Lawyer</strong></p>
-            <p><em>National Forensic Sciences University, Gandhinagar</em></p>
-            
-            <div>
-                <a href="https://linkedin.com/in/bhanutak1310" class="badge">LinkedIn</a>
-                <a href="mailto:bhanutak1310@gmail.com" class="badge">Email</a>
-                <a href="https://github.com/1310-on-web" class="badge">GitHub</a>
-            </div>
-        </div>
-
-        <section>
-            <h2>🚀 About Me</h2>
-            <p>I'm a driven law and data science student passionate about <strong>transforming traditional legal systems through AI-powered solutions</strong>. Currently pursuing B.Sc. LL.B. (Hons.) with specialization in Data Science from NFSU, I stand at the intersection of technology, law, and data analytics.</p>
-            
-            <p><strong>Current GPA:</strong> 8.4/10 (Semester 8) | <strong>Overall Academic Excellence:</strong> Consistent 8+ GPA across all semesters</p>
-        </section>
-
-        <section>
-            <h2>💼 Professional Experience</h2>
-            <div>
-                <h3>🏢 Current Positions</h3>
-                <ul>
-                    <li><strong>Legal Intern</strong> @ <strong>Khaitan & Co, Mumbai</strong> <em>(Aug 2025 - Present)</em><br>
-                    Supporting the Digital and Innovation Team in developing tech-driven legal solutions</li>
-                    
-                    <li><strong>Legal Tech Analyst</strong> @ <strong>Ritam Ventures</strong> <em>(July 2025 - Present)</em><br>
-                    Researching startups, market trends, and innovations within the Indian legal-tech ecosystem</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>🛠️ Technical Arsenal</h2>
-            <h3>Programming & Data Science</h3>
-            <p>Python • R • C++ • JavaScript • SQL</p>
-            
-            <h3>AI/ML & Legal Tech</h3>
-            <ul>
-                <li><strong>Machine Learning:</strong> Scikit-learn, TensorFlow, Weka</li>
-                <li><strong>NLP & LLMs:</strong> LangChain, Legal Prompting, AI-Legal Drafting</li>
-                <li><strong>Legal Automation:</strong> Contract Drafting, Case Analysis, Compliance Tools</li>
-                <li><strong>Data Analysis:</strong> Power BI, Tableau, Advanced Analytics</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>🏆 Key Achievements</h2>
-            <ul>
-                <li><strong>Selected as 1 of 50 Cyber Volunteers</strong> for G20 Conference on Crime & Security</li>
-                <li><strong>Gold Medal</strong> - Child Scientist, National Children Science Congress 2018</li>
-                <li><strong>State Champion</strong> - Quiz Competition representing Rajasthan at National Level (2020)</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>🌐 Connect With Me</h2>
-            <div style="text-align: center;">
-                <a href="https://linkedin.com/in/bhanutak1310" class="badge">LinkedIn</a>
-                <a href="mailto:bhanutak1310@gmail.com" class="badge">Email</a>
-                <a href="https://github.com/1310-on-web" class="badge">GitHub</a>
-            </div>
-        </section>
+      <nav>
+        <div class="logo">Bhanu Tak</div>
+        <ul class="menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Hi, I'm Bhanu Tak</h1>
+      <p>Final Year B.Sc. LL.B. (Hons.) | Data Science & Legal Tech Innovator</p>
+      <a href="#projects" class="btn">Explore My Work</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>As a driven law and data science student at National Forensic Sciences University, I specialize in building AI-powered solutions to transform legal systems. With hands-on experience in machine learning, NLP, and legal analytics, I aim to improve efficiency, accessibility, and decision-making in the legal domain.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <h2>Skills & Tools</h2>
+      <ul class="skills-list">
+        <li>Python</li><li>R</li><li>C/C++</li><li>JavaScript</li><li>SQL</li>
+        <li>TensorFlow</li><li>Scikit-Learn</li><li>LangChain</li><li>Power BI</li><li>Tableau</li>
+        <li>Git & GitHub</li><li>Docker</li><li>HTML/CSS</li><li>React</li><li>Node.js</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="container">
+      <h2>Professional Experience</h2>
+      <ul class="timeline">
+        <li>
+          <h3>Legal Intern – Khaitan & Co, Mumbai</h3>
+          <span>Aug 2025 – Present</span>
+          <p>Supporting the Digital & Innovation team to develop tech-driven legal solutions.</p>
+        </li>
+        <li>
+          <h3>Legal Tech Analyst – Ritam Ventures</h3>
+          <span>Jul 2025 – Present</span>
+          <p>Researching startups and innovations in the Indian legal-tech ecosystem.</p>
+        </li>
+        <li>
+          <h3>AI Developer – Kuki Solutions</h3>
+          <span>Dec 2024 – May 2025</span>
+          <p>Built an AI-driven ESG compliance tool and automated Materiality Reports.</p>
+        </li>
+        <li>
+          <h3>Machine Learning Intern – Dream Legal</h3>
+          <span>May 2024 – Jul 2024</span>
+          <p>Automated legal tasks and maintained ML-powered legal solutions.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="container">
+      <h2>Highlighted Projects</h2>
+      <div class="grid grid-2">
+        <div class="project">
+          <h3>AI-Driven ESG Compliance Tool</h3>
+          <p>Developed backend systems and prompt engineering modules for automated compliance.</p>
+        </div>
+        <div class="project">
+          <h3>Legal Process Automation Suite</h3>
+          <p>Created ML-based pipelines for document processing and predictive case analysis.</p>
+        </div>
+        <div class="project">
+          <h3>Air Pollution Data Analysis</h3>
+          <p>Researched multi-time series patterns during a Data Science internship in Japan.</p>
+        </div>
+        <div class="project">
+          <h3>Forensic Justice Publications</h3>
+          <p>Editor of a book inaugurated by the Home Minister & research presented internationally.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      <p style="text-align:center;">Feel free to connect with me on LinkedIn or send me an email.</p>
+      <div class="social">
+        <a href="https://linkedin.com/in/bhanutak1310" target="_blank" aria-label="LinkedIn">
+          <img src="assets/linkedin.svg" width="32" alt="LinkedIn"/>
+        </a>
+        <a href="mailto:bhanutak1310@gmail.com" aria-label="Email">
+          <img src="assets/mail.svg" width="32" alt="Email"/>
+        </a>
+        <a href="https://github.com/1310-on-web" target="_blank" aria-label="GitHub">
+          <img src="assets/github.svg" width="32" alt="GitHub"/>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      &copy; 2025 Bhanu Tak. All Rights Reserved.
+    </div>
+  </footer>
+
 </body>
 </html>
